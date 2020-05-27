@@ -1,0 +1,79 @@
+<div class="center">
+
+
+  <dx-data-grid #clientGrid
+  id="clientGrid"
+                                [dataSource]="dataSource"
+                                [remoteOperations]="false"
+                                [allowColumnReordering]="true"
+                                [rowAlternationEnabled]="true"
+                                [showBorders]="true"
+                                (onRowUpdated)="update($event)"
+                                (onRowInserted)="insert($event)"
+                                (onRowRemoved)="delete($event)"
+
+
+        >
+        <!-- (onRowRemoving)="delete($event)" -->
+        <!-- (onRowUpdating)="update($event)" -->
+        <!-- (onRowInserting)="insert($event)" -->
+
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 25, 50, 100]"
+        ></dxo-pager>
+        <dxo-search-panel
+        [visible]="true"
+        [highlightCaseSensitive]="true"
+    ></dxo-search-panel>
+
+ <dxo-editing
+    mode="popup"
+    [allowAdding]="true"
+    [allowUpdating]="true"
+    [allowDeleting]="true">
+</dxo-editing>
+    <dxi-column dataField="id" dataType="number" caption="Identifieur" [allowEditing]="false" [formItem]="{visible: false}"></dxi-column>
+    <dxi-column dataField="type" dataType="string"caption="Type Lampadaire"><dxo-lookup
+        [dataSource]="type"
+        displayExpr="Name"
+       >
+    </dxo-lookup></dxi-column>
+    <dxi-column dataField="status" dataType="string" caption="Status"><dxo-lookup
+        [dataSource]="status"
+        displayExpr="Name"
+       >
+    </dxo-lookup></dxi-column>
+    <dxi-column dataField="id" [visible]="true" dataType="string" caption="Région" [formItem]="{visible: false}">  <dxo-lookup
+        [dataSource]="position"
+        displayExpr="region"
+        valueExpr="id">
+    </dxo-lookup></dxi-column>
+    <dxi-column dataField="date" dataType="date" format="dd/MM/yyyy" caption="Date d'ajout">
+         <!-- <dxi-validation-rule type="required"></dxi-validation-rule> -->
+    </dxi-column>
+    <dxi-column dataField="id" [width]="120" [allowFiltering]="false"
+    [allowSorting]="false" cellTemplate="cellTemplate" caption="Voir détails"></dxi-column>
+    <div *dxTemplate="let data of 'cellTemplate'">
+        <a [routerLink]="[data.value]">  Voir détails</a>
+    </div>
+    <!-- <dxi-column dataField="consommations.conso"  [visible]="true" dataType="number" caption="Consommation"></dxi-column> -->
+    <dxi-column dataField="capteurL"  [visible]="false" dataType="string" caption="Capteur Luminosité"><dxo-lookup
+        [dataSource]="exist"
+        displayExpr="Name"
+       >
+    </dxo-lookup></dxi-column>
+    <dxi-column dataField="capteurC"  [visible]="false" dataType="string" caption="Capteur Consommation"><dxo-lookup
+        [dataSource]="exist"
+        displayExpr="Name"
+       >
+    </dxo-lookup></dxi-column>
+    <dxi-column dataField="capteurM"  [visible]="false" dataType="string" caption="Capteur Mouvement"><dxo-lookup
+        [dataSource]="exist"
+        displayExpr="Name"
+       >
+    </dxo-lookup></dxi-column>
+    <dxi-column dataField="region" [visible]="false" dataType="string" caption="Région" [formItem]="{visible: true}"> </dxi-column>
+      </dx-data-grid>
+  </div>

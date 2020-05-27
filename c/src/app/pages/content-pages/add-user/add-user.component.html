@@ -1,0 +1,35 @@
+
+
+
+
+<form class="center" (submit)="register()">
+  <h3 >Ajouter utilisateur</h3>
+
+
+
+  <mat-form-field >
+    <input matInput placeholder="nom" name="nom" value="" [(ngModel)]="credentials.nom">
+  </mat-form-field><br>
+
+  <mat-form-field >
+    <input matInput placeholder="prenom" name="prenom" value="" [(ngModel)]="credentials.prenom">
+  </mat-form-field><br>
+
+  <mat-form-field >
+    <input type="email" matInput placeholder="email" name="email" value="" [(ngModel)]="credentials.email">
+  </mat-form-field><br>
+
+
+  <mat-form-field >
+    <input type="password" matInput placeholder="mot de passe" name="mdp" value="" [(ngModel)]="credentials.mdp">
+  </mat-form-field><br>
+
+
+
+
+  <button mat-raised-button color="primary" >Ajouter</button><br>
+
+
+</form>
+    
+  

@@ -1,0 +1,29 @@
+
+<!--<div class="list-group">
+    <span class="list-group-item" *ngFor="let capteur of capteurList">
+      <h3> {{capteur.typeCapteur}} </h3>
+      <p><strong>Consommation constructeur: </strong> {{capteur.dureeDeVie}} </p>
+      <p><strong>Description: </strong> {{capteur.description}} </p>
+     
+    </span>
+  </div>
+-->
+  <div [class]="class">
+    <header>
+         <a  [class]="cla1" (click)="add()"><i class="fa fa-th-list"></i><mat-icon>view_list</mat-icon></a>
+         <a  [class]="cla2" (click)="remv()"><i class="fa fa-th"><mat-icon>view_module</mat-icon></i></a>
+     </header>
+     <div class="container">
+         <div class="box scrollbar" id="style-1" *ngFor="let capteur of capteurList">
+          <div class="force-overflow"> 
+            <h2> {{capteur.marque}} </h2>
+            <h3>{{capteur.nom}}</h3>
+            <p><strong>Type: </strong>{{capteur.typeCapteur}}</p>
+            <p><strong>Durée de vie: </strong> {{capteur.dureeDeVie}} </p>
+            <p *ngIf="isCollapsed"><strong>Description: </strong> {{capteur.description}} </p>
+            <p  (click)="moins()">{{isCollapsed ? 'Afficher moins' : 'Afficher plus'}}</p>
+         </div>
+         </div>
+     </div>
+ </div>
+  

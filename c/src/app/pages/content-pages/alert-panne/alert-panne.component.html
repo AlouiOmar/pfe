@@ -1,0 +1,35 @@
+<div class="center">
+
+
+  <dx-data-grid #clientGrid
+                id="clientGrid"
+                [dataSource]="dataSource"
+                [remoteOperations]="false"
+                [allowColumnReordering]="true"
+                [rowAlternationEnabled]="true"
+                [showBorders]="true"
+
+
+
+  >
+    <!-- (onRowRemoving)="delete($event)" -->
+    <!-- (onRowUpdating)="update($event)" -->
+    <!-- (onRowInserting)="insert($event)" -->
+
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 25, 50, 100]"
+    ></dxo-pager>
+    <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+    ></dxo-search-panel>
+
+
+    <dxi-column dataField="id" dataType="number" caption="Identifieur" [allowEditing]="false" [formItem]="{visible: false}"></dxi-column>
+    <dxi-column dataField="idLampadaire" dataType="number"caption="id lampadaire"></dxi-column>
+    <dxi-column dataField="reference" dataType="string"caption="reference"></dxi-column>
+    <dxi-column dataField="etat" dataType="string"caption="etat"></dxi-column>
+  </dx-data-grid>
+</div>

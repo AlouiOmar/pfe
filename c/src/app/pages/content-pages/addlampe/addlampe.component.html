@@ -1,0 +1,75 @@
+
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="font-size:34px">Lampadaire 12</mat-card-title>
+    <mat-card-subtitle style="font-size:20px">État: Allumé</mat-card-subtitle>
+  
+  </mat-card-header>
+  <mat-card-content>
+    
+  <mat-card-actions>
+      <button mat-button>OFF</button>
+      <button mat-button>ON</button>
+    </mat-card-actions>
+    <mat-card>
+    <div>
+      <p>Ampoule</p>
+    <p>État: Bon</p>
+    <p>Type: LED</p>
+    <p>Consommation moyenne: 200KWt</p>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div>
+        <p>Ampoule</p>
+      <p>État: Bon</p>
+      <p>Type: LED</p>
+      <p>Consommation moyenne: 250KWt</p>
+      </div></mat-card>
+      <mat-card> <div>
+        <p>Capteur</p>
+      <p>État: Bon</p>
+      <p>Type: Mouvement</p>
+      </div></mat-card><mat-card>
+      <div>
+          <p>Capteur(s)</p>
+        <p>État: Bon</p>
+        <p>Type: Consommation</p>
+        </div></mat-card><mat-card>
+        <div>
+            <p>Capteur(s)</p>
+          <p>État: Bon</p>
+          <p>Type: Luminosité</p>
+          </div></mat-card>
+  </mat-card-content>
+
+</mat-card>
+  <form class="center"  [formGroup]="lampeForm">
+      <h3 >Ajouter lampe</h3>
+       
+         
+     
+  <mat-form-field >
+      <input matInput placeholder="type Lampe" value="" formControlName="typeLampe">
+    </mat-form-field><br>
+  
+    <mat-form-field >
+        <input matInput placeholder="Consommation construteur" value="" formControlName="conso">
+      </mat-form-field><br>
+  
+      <mat-form-field >
+          <textarea matInput placeholder="Description" value="" formControlName="description"></textarea>
+
+        </mat-form-field><br>
+
+          
+  
+            <button mat-raised-button color="primary" [disabled]="lampeForm.invalid" (click)="onSubmitForm()">Ajouter</button><br>
+  
+            <button mat-raised-button color="primary" (click)="onSave()" style="display:none;">Ajouter tt</button>
+  
+    </form>
+    
+  

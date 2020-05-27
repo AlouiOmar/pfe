@@ -1,0 +1,62 @@
+<!--<a (click)="sidenav.toggle()" class="btn btn-primary p-3 button-collapse"><i class="fa fa-bars"></i></a>-->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+          #drawer
+          class="sidenav"
+          fixedInViewport="true"
+          [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+          [mode]="(isHandset$ | async) ? 'over' : 'side'"
+          [opened]="!(isHandset$ | async)">
+    <mat-toolbar class="color-bg-logo"style="display: block">
+      <img src="./assets/img/logo_bws.png" style="height: 80%">
+      <h6 class="app-version">version 1.3.2</h6>
+    </mat-toolbar>
+    <mat-nav-list>
+      <div *ngFor="let item of nav_router" [routerLinkActive]="item.submenu.length != 0 ? '' : 'active'">
+        <mat-divider *ngIf="item.divider === '1'"></mat-divider>
+        <mat-list-item *ngIf="item.routeLink !== ''" [routerLink]="item.routeLink === '' ? null : item.routeLink" [style.display]="item.hidden === true ? 'none' : ''">
+          <mat-icon class="bg-icon-menu" *ngIf="item.routeIcon !== '' && isMatIcon(item.routeIcon)">{{ item.routeIcon }}</mat-icon>
+          <div *ngIf="item.routeIcon !== '' && !isMatIcon(item.routeIcon)">
+            <img [src]="getIconPath(item.routeIcon)" class="bg-icon-menu"  style="height: 24px; width: 24px;">
+          </div>
+          {{ item.routeTitle }}
+        </mat-list-item>
+        <mat-expansion-panel *ngIf="item.routeLink === ''">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon class="bg-icon-menu" *ngIf="item.routeIcon !== ''">{{ item.routeIcon }}</mat-icon> <span style="padding: 5px 0;">{{ item.routeTitle }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div *ngFor="let subItem of item.submenu" [routerLinkActive]="subItem.submenu.length != 0 ? '' : 'active'">
+            <mat-divider *ngIf="subItem.divider === '1'"></mat-divider>
+            <mat-list-item [routerLink]="subItem.routeLink === '' ? null : subItem.routeLink" style="margin-left:10px;">
+              <mat-icon *ngIf="item.routeIcon !== ''">{{ subItem.routeIcon }}</mat-icon> {{ subItem.routeTitle }}
+            </mat-list-item>
+          </div>
+        </mat-expansion-panel>
+      </div>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" role="heading" position="fixed"  >
+      <button type="button" mat-icon-button (click)="drawer.toggle()"  >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ routeTitle }}</span>
+      <div style="width: 100%;">
+        <button type="button" mat-icon-button (click)="logout()" style="float: right;">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+        <button type="button" mat-icon-button (click)="openHistoryAlerts()" style="float: right;">
+          <mat-icon [matBadge]="numberAlert" [matBadgeHidden]="numberAlert<=0" matBadgeColor="warn">notification_important</mat-icon>
+        </button>
+        <div style="float: right;margin-top: 4px;margin-right: 5px;">
+          <span>{{ login }}</span>
+        </div>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>                                                                                                                                              

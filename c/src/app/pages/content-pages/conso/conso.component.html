@@ -1,0 +1,33 @@
+  <br/>
+<div class="select">
+ <mat-form-field>
+  <mat-label>Lampadaire</mat-label>
+  <mat-select matInput >
+      <mat-option value="0" (click)="getConso(0)">Tout</mat-option>
+    <mat-option *ngFor="let lampe of dataSource" [value]="lampe.id" (click)="getConso(lampe.id)"> {{lampe.id}} </mat-option>
+  </mat-select>
+</mat-form-field><br>
+</div>
+
+  <div class="boxChart__container chart-wrapper">
+      <div>
+        <highcharts-chart
+          id="container"
+          [Highcharts]="Highchartss"
+          [constructorType]="chartConstructor"
+          [options]="chartOptions"
+          [callbackFunction]="chartCallback"
+          [(update)]="updateFromInput"
+          [oneToOne]="true"
+          style="width: 100%; height: 400px; display: block;"
+        >
+        </highcharts-chart>
+    <div class="button-wrapper">
+        <br/>
+        <button mat-raised-button color="primary" (click)="onInitChart()">Init Chart</button>  <br/>
+        <button mat-raised-button color="primary" (click)="onInitChart1()">Init Chart</button>  <br/>
+        <button mat-raised-button color="primary" (click)="onInit()">Init</button>  <br/>
+      </div>
+      </div>
+    </div>
+    

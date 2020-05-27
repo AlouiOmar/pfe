@@ -1,0 +1,96 @@
+body{
+	background-color: #E6E9EA;
+	font-family: 'Roboto', sans-serif;
+	margin:0px !important;
+}
+
+
+
+
+.app-header{
+	color: #fff;
+	/*background-color: #EEEEEE;*/
+	text-align: center;
+	/*padding: 1%;
+    -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);*/
+}
+.app-header-bg{
+	margin: 150px auto;
+	background: #2a3869a6;
+	padding: 5px;
+	width: 455px;
+}
+
+.text-app-header{
+	font-family: Roboto,"Helvetica Neue",sans-serif;
+	font-size: 14px;
+	color: #f3cb30;
+	font-weight: 500;
+}
+
+.login-container{
+	width: 100%;
+	height:800px;
+	/*padding: 0% !important;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);*/
+}
+
+.login-box-header{
+	width: auto;
+	/*height: 30%;
+    background-color: #FFFFFF;*/
+	text-align: center;
+	vertical-align: middle;
+	font-size: 3em;
+	padding: 5% 5% 2% 5%;
+	color: #fff;
+}
+
+.login-box-body{
+	width: 270px;
+	height: 100%;
+	padding: 2% 5% 3% 5%;
+	color: #2a3869;
+	background: #ffffff82;
+	margin: 0 auto;
+	border-radius: 3px;
+	box-shadow: 0px 0px 14px 0px #0000004d;
+}
+
+.login-icon{
+	margin-top: -2px;
+}
+
+.justifier {
+	width: 100%;
+	padding-bottom: 2%;
+}
+
+.login-button{
+	width: 200px;
+	display: block; margin: 0 auto;
+	color: #fff !important;
+}
+
+:host ::ng-deep .mat-icon {
+	width: 30px !important;
+}
+:host ::ng-deep .mat-input-element {
+	caret-color: #2a3869;
+}
+
+.bg-login {
+	background-image: url('/assets/img/bg frigo.jpg');
+	background-repeat: no-repeat, repeat;
+	min-height: 100vh;
+}
+
+.position-logo{
+	width: 315px;
+	padding: 2% 5% 0 0;
+}

@@ -1,0 +1,39 @@
+
+
+
+
+  <form class="center"  [formGroup]="capteurForm">
+      <h3 >Ajouter Capteur</h3>
+       
+      <mat-form-field >
+          <input matInput placeholder="Marque" value="" formControlName="marque">
+        </mat-form-field><br>
+
+        <mat-form-field >
+            <input matInput placeholder="Nom" value="" formControlName="nom">
+          </mat-form-field><br>
+     
+
+    <mat-form-field >
+        <input matInput placeholder="type Capteur" value="" formControlName="typeCapteur">
+      </mat-form-field><br>
+  
+    <mat-form-field >
+        <input matInput placeholder="Durée de vie" type="number" value="" formControlName="dureeDeVie">
+        <mat-hint>tapez durée de vie en année(s).</mat-hint>
+      </mat-form-field><br>
+  
+      <mat-form-field >
+          <textarea matInput placeholder="Description" value="" formControlName="description"></textarea>
+
+        </mat-form-field><br>
+
+          
+  
+            <button mat-raised-button color="primary" [disabled]="capteurForm.invalid" (click)="onSubmitForm()">Ajouter</button><br>
+  
+            <button mat-raised-button color="primary" (click)="onSave()" style="display:none;">Ajouter tt</button>
+  
+    </form>
+    
+  

@@ -1,0 +1,31 @@
+::ng-deep .mat-raised-button {
+    color: #fff !important;
+    background-color: #2a3869 !important;
+}
+::ng-deep .mat-raised-button:hover {
+    background-color: #f3cb30 !important;
+}
+::ng-deep .mat-button{
+    background: #2a3869 !important;
+    color: #fff !important;
+    margin: 0 10px !important;
+}
+
+::ng-deep .mat-button:hover{
+    background: #f3cb30 !important;
+    color: #fff !important;
+    margin: 0 10px !important;
+    background-color: transparent;
+}
+
+::ng-deep .mat-button:hover .mat-button-focus-overlay, .mat-stroked-button:hover .mat-button-focus-overlay{
+    opacity: 0 !important;
+}
+
+::ng-deep .dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+    border-bottom: 1px solid #ddd;
+    background: #6dcbef;
+    color: #fff;
+    font-weight: 500;
+    font-size: 17px;
+}

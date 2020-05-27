@@ -1,0 +1,60 @@
+
+
+
+
+  <form class="center"  [formGroup]="lampadaireForm">
+    <h3 >Ajouter lampadaire</h3>
+     
+       
+   <mat-form-field>
+  <mat-label>Type lampadaire</mat-label>
+  <mat-select matInput   formControlName="typeLampadaire" >
+    <mat-option value="lampadaire solo">Lampadaire solo</mat-option>
+    <mat-option value="lampadaire double">Lampadaire double</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+<mat-form-field >
+    <input matInput placeholder="Région" value="" formControlName="region">
+  </mat-form-field><br>
+
+  <mat-form-field >
+      <input matInput placeholder="Latitude" value="" formControlName="latitude">
+    </mat-form-field>
+
+    <mat-form-field >
+        <input matInput placeholder="Longitude" value="" formControlName="longitude">
+      </mat-form-field><br>
+      
+      <mat-form-field>
+          <mat-label>Type capteur</mat-label>
+          <mat-select matInput formControlName="typeCapteur" >
+              <mat-option *ngFor="let capteur of capteurList" [value]="capteur.typeCapteur"> {{capteur.nom}} </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        
+        <mat-form-field>
+            <mat-label>Type ampoule</mat-label>
+            <mat-select matInput formControlName="typeAmpoule">
+              <mat-option *ngFor="let lampe of lampeList" [value]="lampe.typeLampe"> {{lampe.typeLampe}} </mat-option>
+            </mat-select>
+          </mat-form-field><br>
+        <!--  <mat-form-field *ngIf="this.lampadaireForm.get('typeLampadaire').value == 'lampadaire double'">
+              <mat-label>Type ampoule</mat-label>
+              <mat-select matInput formControlName="">
+                <mat-option *ngFor="let lampe of lampeList" [value]="lampe.typeLampe"> {{lampe.typeLampe}} </mat-option>
+              </mat-select>
+            </mat-form-field><br>
+-->
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Choisir date d'ajout" formControlName="dateAjout">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field><br>
+
+          <button mat-raised-button color="primary" [disabled]="lampadaireForm.invalid" (click)="onSubmitForm()">Ajouter</button><br>
+
+          <button mat-raised-button color="primary" (click)="onSave()" style="display:none;">Ajouter tt</button>
+
+  </form>
+  

@@ -1,0 +1,39 @@
+<div class="app-header">
+    <!--<h1 class="app-heading">{{title}}</h1>-->
+</div>
+
+<mat-grid-list cols="3" class="bg-login">
+    <div class="login-container">
+        <div class="login-box-header">
+            <img src="assets/img/logo-login.png" class="position-logo">
+        </div>
+        <form (submit)="login()">
+            <div class="login-box-body">
+                <!-- LOGIN -->
+                <mat-grid-list cols="9" rowHeight="75px">
+                    <mat-grid-tile [colspan]="9">
+                        <mat-icon>lock</mat-icon>
+                        <mat-form-field>
+                            <input matInput name="name" ngModel required placeholder="Username" text="text"  [(ngModel)]="credentials.email">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <!-- PASS -->
+                <mat-grid-list cols="9" rowHeight="75px">
+                    <mat-grid-tile [colspan]="9">
+                        <mat-icon>remove_red_eye</mat-icon>
+                        <mat-form-field>
+                            <input matInput name="pass" ngModel required placeholder="Password" text="password" type="password" [(ngModel)]="credentials.mdp">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <button mat-raised-button  class="login-button"  type="submit">
+                    <mat-icon>input</mat-icon> Login
+                </button>
+            </div>
+        </form>
+        <div class="app-header app-header-bg">
+            <a id="pixinventLink" href="http://www.bewireless-solutions.com/" class="text-app-header">Be Wireless Solutions</a>
+        </div>
+    </div>
+</mat-grid-list>

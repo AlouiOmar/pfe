@@ -27,7 +27,7 @@
     "@types/file-saver": "^2.0.0",
     "angular-highcharts": "^6.2.6",
     "angular2-highcharts": "^0.5.5",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "ngx-openlayers": "0.8.22",
     "openlayers": "^4.6.5",
